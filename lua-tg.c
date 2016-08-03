@@ -1563,7 +1563,7 @@ struct lua_function functions[] = {
   {"send_typing", lq_send_typing, { lfp_peer, lfp_none }},
   {"send_typing_abort", lq_send_typing_abort, { lfp_peer, lfp_none }},
   {"send_photo", lq_send_photo, { lfp_peer, lfp_string, lfp_none }},
-  {"send_photo", lq_send_photo2, { lfp_peer, lfp_string, lfp_string, lfp_none }},
+  {"send_photo2", lq_send_photo2, { lfp_peer, lfp_string, lfp_string, lfp_none }},
   {"send_video", lq_send_video, { lfp_peer, lfp_string, lfp_none }},
   {"send_audio", lq_send_audio, { lfp_peer, lfp_string, lfp_none }},
   {"send_document", lq_send_document, { lfp_peer, lfp_string, lfp_none }},
