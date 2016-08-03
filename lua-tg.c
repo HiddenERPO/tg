@@ -1,20 +1,7 @@
 /*
-    This file is part of telegram-cli.
-
-    Telegram-cli is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 of the License, or
-    (at your option) any later version.
-
-    Telegram-cli is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this telegram-cli.  If not, see <http://www.gnu.org/licenses/>.
-
-    Copyright Vitaly Valtman 2013-2015
+    BlackPlus
+    Developed By @MehdiHS
+    Channel > @Black_Ch :)
 */
 
 #ifdef HAVE_CONFIG_H
@@ -1576,7 +1563,7 @@ struct lua_function functions[] = {
   {"send_typing", lq_send_typing, { lfp_peer, lfp_none }},
   {"send_typing_abort", lq_send_typing_abort, { lfp_peer, lfp_none }},
   {"send_photo", lq_send_photo, { lfp_peer, lfp_string, lfp_none }},
-  {"send_photo2", lq_send_photo2, { lfp_peer, lfp_string, lfp_string, lfp_none }},
+  {"send_photo", lq_send_photo2, { lfp_peer, lfp_string, lfp_string, lfp_none }},
   {"send_video", lq_send_video, { lfp_peer, lfp_string, lfp_none }},
   {"send_audio", lq_send_audio, { lfp_peer, lfp_string, lfp_none }},
   {"send_document", lq_send_document, { lfp_peer, lfp_string, lfp_none }},
