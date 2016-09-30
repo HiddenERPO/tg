@@ -1,7 +1,5 @@
 /*
-    BlackPlus
-    Developed By @MehdiHS
-    Channel > @Black_Ch :)
+    V4.0
 */
 
 #ifdef HAVE_CONFIG_H
