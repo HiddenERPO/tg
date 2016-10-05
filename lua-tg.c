@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this telegram-cli.  If not, see <http://www.gnu.org/licenses/>.
 
-    Copyright Vitaly Valtman 2013-2015
+    Copyright Pouya Poorrahman For Jove V4.0
 */
 
 #ifdef HAVE_CONFIG_H
@@ -1528,7 +1528,7 @@ void lua_do_all (void) {
       p += 2;
       break;
     case lq_channel_get_users:
-      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 5000, 0, 0, lua_contact_list_cb, lua_ptr[p].ptr);
+      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 6000, 0, 0, lua_contact_list_cb, lua_ptr[p].ptr);
       p += 2;
       break;
     case lq_channel_get_bots:
@@ -1536,7 +1536,7 @@ void lua_do_all (void) {
       p += 2;
       break;
     case lq_channel_get_kicked:
-      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 5000, 0, 3, lua_contact_list_cb, lua_ptr[p].ptr);
+      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 6000, 0, 3, lua_contact_list_cb, lua_ptr[p].ptr);
       p += 2;
       break;
     case lq_channel_unblock:
