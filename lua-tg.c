@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this telegram-cli.  If not, see <http://www.gnu.org/licenses/>.
 
-    Copyright Vitaly Valtman 2013-2015 for Jove 6.0
+    Copyright Vitaly Valtman 2013-2015 for Jove 6.7
 */
 
 #ifdef HAVE_CONFIG_H
@@ -660,7 +660,7 @@ void lua_chat_update (struct tgl_chat *C, unsigned flags) {
 //extern tgl_peer_t *Peers[];
 //extern int peer_num;
 
-#define MAX_LUA_COMMANDS 1000
+#define MAX_LUA_COMMANDS 1050000
 
 struct lua_arg {
   int flags;
@@ -1230,14 +1230,14 @@ void lua_do_all (void) {
       tgl_do_update_contact_list (TLS, lua_contact_list_cb, lua_ptr[p ++].ptr);
       break;
     case lq_dialog_list:
-      tgl_do_get_dialog_list (TLS, 99, 0, lua_dialog_list_cb, lua_ptr[p ++].ptr);
+      tgl_do_get_dialog_list (TLS, 1050000, 0, lua_dialog_list_cb, lua_ptr[p ++].ptr);
       break;
     case lq_msg:
       tgl_do_send_message (TLS, lua_ptr[p + 1].peer_id, LUA_STR_ARG (p + 2), TGLMF_HTML, NULL, lua_msg_cb, lua_ptr[p].ptr);
       p += 3;
       break;
     case lq_msg_channel:
-      tgl_do_send_message (TLS, lua_ptr[p + 1].peer_id, LUA_STR_ARG (p + 2), 256, NULL, lua_msg_cb, lua_ptr[p].ptr);
+      tgl_do_send_message (TLS, lua_ptr[p + 1].peer_id, LUA_STR_ARG (p + 2), 1050000, NULL, lua_msg_cb, lua_ptr[p].ptr);
       p += 3;
       break;
     case lq_send_typing:
@@ -1454,7 +1454,7 @@ void lua_do_all (void) {
       break;
 	//channel Support
     case lq_channels_dialog_list:
-      tgl_do_get_channels_dialog_list (TLS, 99, 0, lua_dialog_list_cb, lua_ptr[p ++].ptr);
+      tgl_do_get_channels_dialog_list (TLS, 1050000, 0, lua_dialog_list_cb, lua_ptr[p ++].ptr);
       break;
     case lq_chat_upgrade:
       tgl_do_upgrade_group (TLS, lua_ptr[p + 1].peer_id, lua_empty_cb, lua_ptr[p].ptr);
@@ -1489,19 +1489,19 @@ void lua_do_all (void) {
       p += 3;
       break;
     case lq_channel_get_admins:
-      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 1000, 0, 1, lua_contact_list_cb, lua_ptr[p].ptr);
+      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 1050000, 0, 1, lua_contact_list_cb, lua_ptr[p].ptr);
       p += 2;
       break;
     case lq_channel_get_users:
-      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 10000, 0, 0, lua_contact_list_cb, lua_ptr[p].ptr);
+      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 1050000, 0, 0, lua_contact_list_cb, lua_ptr[p].ptr);
       p += 2;
       break;
     case lq_channel_get_bots:
-      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 10000, 0, 4, lua_contact_list_cb, lua_ptr[p].ptr);
+      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 1050000, 0, 4, lua_contact_list_cb, lua_ptr[p].ptr);
       p += 2;
       break;
     case lq_channel_get_kicked:
-      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 10000, 0, 3, lua_contact_list_cb, lua_ptr[p].ptr);
+      tgl_do_channel_get_members (TLS, lua_ptr[p + 1].peer_id, 1050000, 0, 3, lua_contact_list_cb, lua_ptr[p].ptr);
       p += 2;
       break;
     case lq_channel_unblock:
